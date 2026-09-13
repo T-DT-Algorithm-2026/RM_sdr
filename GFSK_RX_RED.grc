@@ -1,0 +1,1414 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: GFSK_RX_RED
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: GFSK_RX_RED
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 0.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: baud
+  id: variable
+  parameters:
+    comment: ''
+    value: 1000000/52
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [408, 120.0]
+    rotation: 0
+    state: disabled
+- name: pam2
+  id: variable
+  parameters:
+    comment: ''
+    value: '[-1, 1]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [584, 24.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 24.0]
+    rotation: 0
+    state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: ''
+    value: '47'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [480, 24.0]
+    rotation: 0
+    state: enabled
+- name: symb_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: samp_rate/sps
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [312, 24.0]
+    rotation: 0
+    state: enabled
+- name: analog_quadrature_demod_cf_0
+  id: analog_quadrature_demod_cf
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [888, 240.0]
+    rotation: 0
+    state: enabled
+- name: analog_quadrature_demod_cf_0_0
+  id: analog_quadrature_demod_cf
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 984.0]
+    rotation: 0
+    state: enabled
+- name: analog_quadrature_demod_cf_0_0_0
+  id: analog_quadrature_demod_cf
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [728, 1384.0]
+    rotation: 0
+    state: disabled
+- name: analog_quadrature_demod_cf_0_0_1
+  id: analog_quadrature_demod_cf
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [768, 1184.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: /home/tdt/radio_data/8.4.bin
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 512.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_source_0_0
+  id: blocks_file_source
+  parameters:
+    affinity: ''
+    alias: ''
+    begin_tag: pmt.PMT_NIL
+    comment: ''
+    file: /home/tdt/radio_data/3.bin
+    length: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    repeat: 'True'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 740.0]
+    rotation: 0
+    state: disabled
+- name: blocks_tag_debug_0_0
+  id: blocks_tag_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    display: 'True'
+    filter: '"RM_ELE"'
+    name: ''
+    num_inputs: '1'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1928, 584.0]
+    rotation: 180
+    state: disabled
+- name: blocks_throttle2_0_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate*2
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 728.0]
+    rotation: 0
+    state: disabled
+- name: blocks_uchar_to_float_0_2_0
+  id: blocks_uchar_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2008, 744.0]
+    rotation: 0
+    state: disabled
+- name: blocks_uchar_to_float_0_2_0_1
+  id: blocks_uchar_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1568, 688.0]
+    rotation: 0
+    state: disabled
+- name: blocks_unpacked_to_packed_xx_0_0
+  id: blocks_unpacked_to_packed_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    bits_per_chunk: '1'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1608, 792.0]
+    rotation: 0
+    state: disabled
+- name: digital_correlate_access_code_xx_ts_0_0_0
+  id: digital_correlate_access_code_xx_ts
+  parameters:
+    access_code: '0001011011101000110100110111011100010101000111000111000100101101'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tagname: RM_ELE
+    threshold: '20'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1200, 800.0]
+    rotation: 0
+    state: disabled
+- name: digital_gfsk_demod_0_0_0
+  id: digital_gfsk_demod
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    freq_error: '0.0'
+    gain_mu: '0.175'
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mu: '0.5'
+    omega_relative_limit: '0.005'
+    samples_per_symbol: int(samp_rate/symb_rate)
+    sensitivity: '2.5809'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [864, 784.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport pmt\nfrom scipy\
+      \ import signal\nimport time\n\nclass rm_gfsk_receiver(gr.basic_block):\n  \
+      \  \"\"\"\n    RoboMaster 2-GFSK \u7EC8\u6781\u9AD8\u7CBE\u5EA6\u89E3\u8C03\u5668\
+      \ (\u52A0\u5165\u6781\u6027\u4E92\u76F8\u5173\uFF0C\u514D\u75AB\u632F\u5E45\u5267\
+      \u53D8)\n    \u5E26\u6709\u79D2\u7EA7\u6027\u80FD\u76D1\u63A7 (Windows \u53CB\
+      \u597D\u578B)\n    \u4F5C\u4E3A\u6700\u540E\u4E00\u4E2A\u8282\u70B9 (Sink Block)\
+      \ \u8FD0\u884C\n    \"\"\"\n    \n    def __init__(self, threshold=2400.0, sps=52,\
+      \ packet_bytes=27):\n        gr.basic_block.__init__(\n            self,\n \
+      \           name=\"RM GFSK Receiver Sink\",\n            in_sig=[np.float32],\n\
+      \            out_sig=[np.uint8]\n        )\n        self.threshold = threshold\n\
+      \        self.sps = sps\n        self.packet_bytes = packet_bytes\n        self.packet_bits\
+      \ = packet_bytes * 8\n        self.payload_samples = self.packet_bits * self.sps\n\
+      \n        access_code_hex = 0x2F6F4C74B914492E\n        bits = format(access_code_hex,\
+      \ '064b')\n        symbols = np.array([1.0 if b == '1' else -1.0 for b in bits],\
+      \ dtype=np.float32)\n        self.kernel = np.repeat(symbols, self.sps)\n  \
+      \      self.kernel_len = len(self.kernel) \n\n        self.buf = np.array([],\
+      \ dtype=np.float32)\n        self.state = \"SEARCH\"\n        \n        self.rx_count\
+      \ = 0              # \u5386\u53F2\u603B\u8BA1\u5B8C\u7F8E\u5305\u6570\n    \
+      \    self.last_print_time = time.time()  # \u4E0A\u6B21\u6253\u5370\u7684\u65F6\
+      \u95F4\u6233\n        self.success_this_sec = 0      # \u8FD9\u4E00\u79D2\u5185\
+      \u7684\u6210\u529F\u6B21\u6570\n        self.bad_header_this_sec = 0   # \u8FD9\
+      \u4E00\u79D2\u5185\u7684\u574F\u5934\u6B21\u6570\n        self.bad_packet_print_counter\
+      \ = 0 #\u574F\u5934\u6253\u5370\u63A7\u5236\n        \n        self.max_buf_size\
+      \ = self.payload_samples * 5 \n\n    def general_work(self, input_items, output_items):\n\
+      \        in0 = input_items[0]\n        out = output_items[0]\n\n        if len(in0)\
+      \ == 0:\n            return 0\n\n        self.buf = np.concatenate((self.buf,\
+      \ in0))\n        self.consume(0, len(in0))\n        produced = 0\n\n       \
+      \ if len(self.buf) > self.max_buf_size:\n            self.buf = self.buf[-self.max_buf_size:]\n\
+      \n        while True:\n            if self.state == \"SEARCH\":\n          \
+      \      if len(self.buf) < self.kernel_len*5:\n                    break\n  \
+      \              \n                # dc_trend = signal.lfilter([1 - 0.95], [1,\
+      \ -0.95], self.buf)\n                centered_buf = self.buf - np.mean(self.buf)\n\
+      \                sign_buf = np.sign(centered_buf)\n                sign_buf[sign_buf\
+      \ == 0] = 1.0\n                \n                corr = signal.correlate(sign_buf,\
+      \ self.kernel, mode='valid', method='fft')\n                peaks, _ = signal.find_peaks(corr,\
+      \ height=self.threshold, distance=self.sps*8)\n\n                if len(peaks)\
+      \ > 0:\n                    peak_idx = peaks[0]\n                    self.state\
+      \ = \"EXTRACT\"\n                    self.buf = self.buf[peak_idx:]\n      \
+      \          else:\n                    self.buf = self.buf[-(self.kernel_len\
+      \ - 1):]\n                    break\n\n            elif self.state == \"EXTRACT\"\
+      :\n                if len(self.buf) >= self.payload_samples:\n\n           \
+      \         packet_wave = self.buf[:self.payload_samples]\n                  \
+      \  self.buf = self.buf[self.payload_samples:]\n\n                    #\u52A8\
+      \u6001\u5339\u914D\u6CE2\u5F62\u4E2D\u5FC3\u90E8\u5206\uFF0C\u51CF\u5C11\u632F\
+      \u5E45\u5267\u53D8\u7684\u5F71\u54CD\n                    preamble_wave = packet_wave[:64\
+      \ * self.sps]\n                    high_level = np.percentile(preamble_wave,\
+      \ 90)\n                    low_level = np.percentile(preamble_wave, 10)\n\n\
+      \                    symbols_matrix = packet_wave.reshape(-1, self.sps)\n  \
+      \                  start_idx = self.sps // 2 - 2\n                    end_idx\
+      \ = self.sps  // 2 + 2\n                    symbol_voltages = np.mean(symbols_matrix[:,\
+      \ start_idx:end_idx], axis=1)\n\n                    bits = np.zeros(len(symbol_voltages),\
+      \ dtype=np.uint8)\n                    # alpha = 0.1\n                    \n\
+      \                    for i, v in enumerate(symbol_voltages):\n             \
+      \           threshold = (high_level + low_level) / 2.0\n                   \
+      \     if v > threshold:\n                            bits[i] = 1\n         \
+      \                   # high_level = (1 - alpha) * high_level + alpha * v\n  \
+      \                      else:\n                            bits[i] = 0\n    \
+      \                        # low_level = (1 - alpha) * low_level + alpha * v\n\
+      \n                    byte_array = np.packbits(bits)\n\n                   \
+      \ \n                    # \u6210\u529F\u548C\u5931\u8D25\u7684\u8BA1\u6570\u903B\
+      \u8F91\n                    if byte_array[0] == 0x2F and byte_array[1] == 0x6F:\n\
+      \                        self.rx_count += 1\n                        self.success_this_sec\
+      \ += 1 # \u6210\u529F\u8BA1\u6570\u5668 +1\n                        #print(f\"\
+      [{time.strftime('%H:%M:%S')}] \U0001F4E6 \u5B8C\u7F8E\u5305 #{self.rx_count}\
+      \ | {hex_str}\")\n\n                        # \u6838\u5FC3\u4FEE\u6539\uFF1A\
+      \u5207\u7247\u83B7\u53D6\u540E 15 \u4E2A\u5B57\u8282 (\u5047\u8BBE\u603B\u957F\
+      \ 27\uFF0C12:27 \u5C31\u662F\u540E 15 \u4E2A)\n                        payload\
+      \ = byte_array[-15:] \n                        payload_len = len(payload) #\
+      \ \u8FD9\u91CC\u662F 15\n\n                        # \u628A\u8FD9\u7EAF\u51C0\
+      \u7684 15 \u4E2A\u5B57\u8282\u8F93\u51FA\u7ED9 downstream \u7684 ZMQ\n     \
+      \                   out[produced : produced + payload_len] = payload\n     \
+      \                   tag_index = self.nitems_written(0) + produced\n        \
+      \                self.add_item_tag(0, tag_index, pmt.intern(\"packet_len\"),\
+      \ pmt.from_long(payload_len))\n                        produced += payload_len\n\
+      \                        \n                    else:\n                     \
+      \   self.bad_header_this_sec += 1 # \u8BEF\u7801\u8BA1\u6570\u5668 +1\n    \
+      \                    self.bad_packet_print_counter += 1 \n                 \
+      \       \n                        # \u3010\u4FEE\u6539\u70B9\u3011\u6EE1 10\
+      \ \u4E2A\u574F\u5305\u65F6\uFF0C\u628A\u5305\u7684\u5185\u5BB9\u8F6C\u6210 16\
+      \ \u8FDB\u5236\u6253\u5370\u51FA\u6765\n                        if self.bad_packet_print_counter\
+      \ >= 10:\n                            # \u5C06 byte_array \u8F6C\u6362\u4E3A\
+      \u4F8B\u5982 \"2F 6E 4C ...\" \u7684\u683C\u5F0F\n                         \
+      \   hex_data = ' '.join([f'{b:02X}' for b in byte_array])\n                \
+      \            print(f\"[{time.strftime('%H:%M:%S')}] \u26A0\uFE0F \u7B2C 10 \u4E2A\
+      \u574F\u5305\u5185\u5BB9: {hex_data}\")\n                            self.bad_packet_print_counter\
+      \ = 0\n\n                    self.state = \"SEARCH\"\n                else:\n\
+      \                    break\n        \n        current_time = time.time()\n \
+      \       if current_time - self.last_print_time >= 1.0:\n            print(f\"\
+      [{time.strftime('%H:%M:%S')}] \u6027\u80FD\u76D1\u63A7 | \u6210\u529F: {self.success_this_sec}\
+      \ \u5305/\u79D2 | \u4E22\u5F03(\u5047\u5CF0/\u574F\u5934): {self.bad_header_this_sec}\
+      \ \u6B21/\u79D2 | \u603B\u63A5\u6536: {self.rx_count}\")\n            \n   \
+      \         self.success_this_sec = 0\n            self.bad_header_this_sec =\
+      \ 0\n            self.last_print_time = current_time\n\n        return produced\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_bytes: '27'
+    sps: '52'
+    threshold: '1500'
+  states:
+    _io_cache: "('RM GFSK Receiver Sink', 'rm_gfsk_receiver', [('threshold', '2400.0'),\
+      \ ('sps', '52'), ('packet_bytes', '27')], [('0', 'float', 1)], [('0', 'byte',\
+      \ 1)], '\\n    RoboMaster 2-GFSK \u7EC8\u6781\u9AD8\u7CBE\u5EA6\u89E3\u8C03\u5668\
+      \ (\u52A0\u5165\u6781\u6027\u4E92\u76F8\u5173\uFF0C\u514D\u75AB\u632F\u5E45\u5267\
+      \u53D8)\\n    \u5E26\u6709\u79D2\u7EA7\u6027\u80FD\u76D1\u63A7 (Windows \u53CB\
+      \u597D\u578B)\\n    \u4F5C\u4E3A\u6700\u540E\u4E00\u4E2A\u8282\u70B9 (Sink Block)\
+      \ \u8FD0\u884C\\n    ', ['packet_bytes', 'sps', 'threshold'])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1416, 472.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nfrom scipy import\
+      \ signal\n\nclass rm_gfsk_score_monitor(gr.sync_block):\n    \"\"\"\n    RoboMaster\
+      \ 2-GFSK \u76F8\u5173\u6027\u6253\u5206\u76D1\u89C6\u5668 (\u8F93\u51FA\u8FDE\
+      \u7EED\u7684\u5339\u914D\u6CE2\u5F62)\n    \"\"\"\n    def __init__(self, sps=52):\n\
+      \        gr.sync_block.__init__(\n            self,\n            name=\"RM GFSK\
+      \ Score Monitor\",\n            in_sig=[np.float32],\n            out_sig=[np.float32]\
+      \ # \u8F93\u51FA\u8FDE\u7EED\u7684 Float32 \u6CE2\u5F62\n        )\n       \
+      \ self.sps = sps\n        \n        # \u751F\u6210 Access Code \u7406\u60F3\u6CE2\
+      \u5F62\n        access_code_hex = 0x2F6F4C74B914492E\n        bits = format(access_code_hex,\
+      \ '064b')\n        symbols = np.array([1.0 if b == '1' else -1.0 for b in bits],\
+      \ dtype=np.float32)\n        self.kernel = np.repeat(symbols, self.sps)\n  \
+      \      self.kernel_len = len(self.kernel)\n        \n        # \u8BA9\u5E95\u5C42\
+      \u7684 C++ \u5E2E\u6211\u4EEC\u5B8C\u7F8E\u7BA1\u7406\u6ED1\u52A8\u7A97\u53E3\
+      \n        self.set_history(self.kernel_len)\n\n    def work(self, input_items,\
+      \ output_items):\n        in0 = input_items[0]\n        out = output_items[0]\n\
+      \        \n        # --- \u589E\u52A0\uFF1A\u548C\u63A5\u6536\u7AEF\u4E00\u6A21\
+      \u4E00\u6837\u7684\u9884\u5904\u7406\u903B\u8F91 ---\n        # 1. \u52A8\u6001\
+      \u53BB\u76F4\u6D41\n        centered_in0 = in0 - np.mean(in0)\n        \n  \
+      \      # 2. \u6781\u6027\u4E8C\u503C\u5316 (\u5F3A\u5236\u538B\u5E73\u4E3A +1\
+      \ \u548C -1)\n        sign_in0 = np.sign(centered_in0)\n        sign_in0[sign_in0\
+      \ == 0] = 1.0\n        \n        # 3. \u4F7F\u7528\u4E8C\u503C\u5316\u540E\u7684\
+      \u6CE2\u5F62\u7B97\u5F97\u5206\n        corr = signal.correlate(sign_in0, self.kernel,\
+      \ mode='valid', method='fft')\n        \n        out[:] = corr\n        return\
+      \ len(out)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    sps: sps
+  states:
+    _io_cache: "('RM GFSK Score Monitor', 'rm_gfsk_score_monitor', [('sps', '52')],\
+      \ [('0', 'float', 1)], [('0', 'float', 1)], '\\n    RoboMaster 2-GFSK \u76F8\
+      \u5173\u6027\u6253\u5206\u76D1\u89C6\u5668 (\u8F93\u51FA\u8FDE\u7EED\u7684\u5339\
+      \u914D\u6CE2\u5F62)\\n    ', ['sps'])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1392, 88.0]
+    rotation: 0
+    state: disabled
+- name: freq_xlating_fir_filter_xxx_0_0
+  id: freq_xlating_fir_filter_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freq: '0'
+    comment: ''
+    decim: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate*2
+    taps: firdes.low_pass(1.0,samp_rate*2,480000,40000)
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [584, 776.0]
+    rotation: 0
+    state: disabled
+- name: freq_xlating_fir_filter_xxx_0_0_0
+  id: freq_xlating_fir_filter_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freq: '-400000'
+    comment: ''
+    decim: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate*2
+    taps: firdes.low_pass(1.0,samp_rate*2,480000,40000)
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 944.0]
+    rotation: 0
+    state: enabled
+- name: freq_xlating_fir_filter_xxx_0_0_0_0
+  id: freq_xlating_fir_filter_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freq: '400000'
+    comment: ''
+    decim: '4'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate*4
+    taps: firdes.low_pass(1.0,samp_rate*4,125000,40000)
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [440, 1344.0]
+    rotation: 0
+    state: disabled
+- name: freq_xlating_fir_filter_xxx_0_0_0_1
+  id: freq_xlating_fir_filter_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freq: '-100000'
+    comment: ''
+    decim: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate*2
+    taps: firdes.low_pass(1.0,samp_rate*2,420000,40000)
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 1156.0]
+    rotation: 0
+    state: enabled
+- name: freq_xlating_fir_filter_xxx_0_0_0_2
+  id: freq_xlating_fir_filter_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freq: '600000'
+    comment: ''
+    decim: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate*2
+    taps: firdes.low_pass(1.0,samp_rate*2,270000,40000)
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [552, 280.0]
+    rotation: 0
+    state: enabled
+- name: iio_fmcomms2_source_0
+  id: iio_fmcomms2_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '2000000'
+    bbdc: 'True'
+    buffer_size: '65536'
+    comment: ''
+    filter: ''
+    filter_source: '''Auto'''
+    fpass: '0'
+    frequency: '432600000'
+    fstop: '0'
+    gain1: '''slow_attack'''
+    gain2: '''slow_attack'''
+    len_tag_key: packet_len
+    manual_gain1: '64'
+    manual_gain2: '64'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    quadrature: 'True'
+    rf_port_select: '''A_BALANCED'''
+    rfdc: 'True'
+    rx1_en: 'False'
+    rx2_en: 'True'
+    samplerate: samp_rate*2
+    type: fc32
+    uri: ip:192.168.2.1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [64, 812.0]
+    rotation: 0
+    state: enabled
+- name: low_pass_filter_0
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '250000'
+    decim: '1'
+    gain: '1'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '50000'
+    win: window.WIN_BLACKMAN
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1176, 152.0]
+    rotation: 0
+    state: enabled
+- name: low_pass_filter_0_1
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '480000'
+    decim: '1'
+    gain: '1'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '40000'
+    win: window.WIN_BLACKMAN
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1032, 928.0]
+    rotation: 0
+    state: enabled
+- name: low_pass_filter_0_1_0
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '123000'
+    decim: '1'
+    gain: '1'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '40000'
+    win: window.WIN_BLACKMAN
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [960, 1360.0]
+    rotation: 0
+    state: disabled
+- name: low_pass_filter_0_1_1
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '410000'
+    decim: '1'
+    gain: '1'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '40000'
+    win: window.WIN_BLACKMAN
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1016, 1128.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_x_0_1_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"final_noise"'
+    nconnections: '1'
+    size: '1024'
+    srate: symb_rate/8
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '256'
+    ymin: '0'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2208, 720.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_time_sink_x_0_1_0_1
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"final_noise"'
+    nconnections: '1'
+    size: '1024'
+    srate: symb_rate/8
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '256'
+    ymin: '0'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1768, 664.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_time_sink_x_0_1_1
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"final_number"'
+    nconnections: '1'
+    size: '1024'
+    srate: symb_rate/8
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '256'
+    ymin: '0'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1440, 184.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_time_sink_x_0_1_1_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"final_number"'
+    nconnections: '1'
+    size: '1024'
+    srate: symb_rate/8
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '256'
+    ymin: '0'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1104, 344.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_time_sink_x_0_1_1_1
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"score"'
+    nconnections: '1'
+    size: '1024'
+    srate: symb_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '256'
+    ymin: '0'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1624, 72.0]
+    rotation: 0
+    state: disabled
+- name: robomaster_gfsk_receiver_0
+  id: robomaster_gfsk_receiver
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_bytes: '27'
+    sps: '47'
+    threshold: '1100'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1360, 624.0]
+    rotation: 0
+    state: enabled
+- name: robomaster_gfsk_receiver_noise_0
+  id: robomaster_gfsk_receiver_noise
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_bytes: '27'
+    sps: '47'
+    threshold: '900'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1520, 984.0]
+    rotation: 0
+    state: enabled
+- name: robomaster_gfsk_receiver_noise_0_0
+  id: robomaster_gfsk_receiver_noise
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_bytes: '27'
+    sps: '52'
+    threshold: '1000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1472, 1384.0]
+    rotation: 0
+    state: disabled
+- name: robomaster_gfsk_receiver_noise_0_1
+  id: robomaster_gfsk_receiver_noise
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_bytes: '27'
+    sps: '47'
+    threshold: '900'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1160.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_pub_sink_0
+  id: zeromq_pub_sink
+  parameters:
+    address: tcp://127.0.0.1:5555
+    affinity: ''
+    alias: ''
+    bind: 'True'
+    comment: ''
+    drop_on_hwm: 'True'
+    hwm: '-1'
+    key: ''
+    pass_tags: 'False'
+    timeout: '100'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1688, 432.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_pub_sink_0_0
+  id: zeromq_pub_sink
+  parameters:
+    address: tcp://127.0.0.1:6666
+    affinity: ''
+    alias: ''
+    bind: 'True'
+    comment: ''
+    drop_on_hwm: 'True'
+    hwm: '-1'
+    key: ''
+    pass_tags: 'False'
+    timeout: '100'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1864, 984.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_pub_sink_0_0_0
+  id: zeromq_pub_sink
+  parameters:
+    address: tcp://127.0.0.1:6668
+    affinity: ''
+    alias: ''
+    bind: 'True'
+    comment: ''
+    drop_on_hwm: 'True'
+    hwm: '-1'
+    key: ''
+    pass_tags: 'False'
+    timeout: '100'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1816, 1384.0]
+    rotation: 0
+    state: disabled
+- name: zeromq_pub_sink_0_0_1
+  id: zeromq_pub_sink
+  parameters:
+    address: tcp://127.0.0.1:6667
+    affinity: ''
+    alias: ''
+    bind: 'True'
+    comment: ''
+    drop_on_hwm: 'True'
+    hwm: '-1'
+    key: ''
+    pass_tags: 'False'
+    timeout: '100'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1840, 1160.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [analog_quadrature_demod_cf_0, '0', low_pass_filter_0, '0']
+- [analog_quadrature_demod_cf_0, '0', qtgui_time_sink_x_0_1_1_0, '0']
+- [analog_quadrature_demod_cf_0_0, '0', low_pass_filter_0_1, '0']
+- [analog_quadrature_demod_cf_0_0_0, '0', low_pass_filter_0_1_0, '0']
+- [analog_quadrature_demod_cf_0_0_1, '0', low_pass_filter_0_1_1, '0']
+- [blocks_file_source_0_0, '0', blocks_throttle2_0_0, '0']
+- [blocks_throttle2_0_0, '0', freq_xlating_fir_filter_xxx_0_0_0, '0']
+- [blocks_throttle2_0_0, '0', freq_xlating_fir_filter_xxx_0_0_0_1, '0']
+- [blocks_throttle2_0_0, '0', freq_xlating_fir_filter_xxx_0_0_0_2, '0']
+- [blocks_uchar_to_float_0_2_0, '0', qtgui_time_sink_x_0_1_0, '0']
+- [blocks_uchar_to_float_0_2_0_1, '0', qtgui_time_sink_x_0_1_0_1, '0']
+- [blocks_unpacked_to_packed_xx_0_0, '0', blocks_tag_debug_0_0, '0']
+- [blocks_unpacked_to_packed_xx_0_0, '0', blocks_uchar_to_float_0_2_0, '0']
+- [digital_correlate_access_code_xx_ts_0_0_0, '0', blocks_unpacked_to_packed_xx_0_0,
+  '0']
+- [digital_gfsk_demod_0_0_0, '0', blocks_uchar_to_float_0_2_0_1, '0']
+- [digital_gfsk_demod_0_0_0, '0', digital_correlate_access_code_xx_ts_0_0_0, '0']
+- [epy_block_0, '0', zeromq_pub_sink_0, '0']
+- [epy_block_1, '0', qtgui_time_sink_x_0_1_1_1, '0']
+- [freq_xlating_fir_filter_xxx_0_0, '0', digital_gfsk_demod_0_0_0, '0']
+- [freq_xlating_fir_filter_xxx_0_0_0, '0', analog_quadrature_demod_cf_0_0, '0']
+- [freq_xlating_fir_filter_xxx_0_0_0_0, '0', analog_quadrature_demod_cf_0_0_0, '0']
+- [freq_xlating_fir_filter_xxx_0_0_0_1, '0', analog_quadrature_demod_cf_0_0_1, '0']
+- [freq_xlating_fir_filter_xxx_0_0_0_2, '0', analog_quadrature_demod_cf_0, '0']
+- [iio_fmcomms2_source_0, '0', blocks_file_sink_0, '0']
+- [iio_fmcomms2_source_0, '0', freq_xlating_fir_filter_xxx_0_0_0, '0']
+- [iio_fmcomms2_source_0, '0', freq_xlating_fir_filter_xxx_0_0_0_1, '0']
+- [iio_fmcomms2_source_0, '0', freq_xlating_fir_filter_xxx_0_0_0_2, '0']
+- [low_pass_filter_0, '0', epy_block_0, '0']
+- [low_pass_filter_0, '0', epy_block_1, '0']
+- [low_pass_filter_0, '0', qtgui_time_sink_x_0_1_1, '0']
+- [low_pass_filter_0, '0', robomaster_gfsk_receiver_0, '0']
+- [low_pass_filter_0_1, '0', robomaster_gfsk_receiver_noise_0, '0']
+- [low_pass_filter_0_1_0, '0', robomaster_gfsk_receiver_noise_0_0, '0']
+- [low_pass_filter_0_1_1, '0', robomaster_gfsk_receiver_noise_0_1, '0']
+- [robomaster_gfsk_receiver_0, '0', zeromq_pub_sink_0, '0']
+- [robomaster_gfsk_receiver_noise_0, '0', zeromq_pub_sink_0_0, '0']
+- [robomaster_gfsk_receiver_noise_0_0, '0', zeromq_pub_sink_0_0_0, '0']
+- [robomaster_gfsk_receiver_noise_0_1, '0', zeromq_pub_sink_0_0_1, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2

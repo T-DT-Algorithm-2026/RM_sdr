@@ -1,0 +1,7 @@
+build/
+install/
+log/
+__pycache__/
+.agents/
+.codex/
+AGENTS.md

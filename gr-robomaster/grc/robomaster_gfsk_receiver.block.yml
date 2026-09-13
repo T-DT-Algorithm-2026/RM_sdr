@@ -1,0 +1,42 @@
+id: robomaster_gfsk_receiver
+label: gfsk_receiver
+category: '[robomaster]'
+
+templates:
+  imports: from gnuradio import robomaster
+  make: robomaster.gfsk_receiver(${threshold}, ${sps}, ${packet_bytes})
+
+#  Make one 'parameters' list entry for every parameter you want settable from the GUI.
+#     Keys include:
+#     * id (makes the value accessible as keyname, e.g. in the make entry)
+#     * label (label shown in the GUI)
+#     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
+#     * default
+parameters:
+- id: threshold
+  label: Threshold
+  dtype: float
+  default: '1500.0'
+- id: sps
+  label: Samples per Symbol
+  dtype: int
+  default: '52'
+- id: packet_bytes
+  label: Packet Bytes
+  dtype: int
+  default: '27'
+
+# 输入端口定义
+inputs:
+- label: in
+  domain: stream
+  dtype: float
+  vlen: 1
+
+outputs:
+- label: out
+  domain: stream
+  dtype: byte
+
+# 设置图标和外观
+file_format: 1
